@@ -18,4 +18,4 @@ COPY . .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["uvicorn", "scraper_api:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["python", "scraper_api.py"]

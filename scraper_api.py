@@ -90,11 +90,16 @@ def scrape(url: str = Query(...)):
 
 
 
-
-
-
     return {
         "tournament": tournament,
         "players": sorted(players),
         "tables": tables
     }
+
+if __name__ == "__main__":
+    import os
+    import uvicorn
+
+    port = int(os.environ.get("PORT", 8080))
+    uvicorn.run("scraper_api:app", host="0.0.0.0", port=port, reload=False)
+
